@@ -1,0 +1,85 @@
+How to Use
+1. Power & Boot
+
+Power the ESP32 using a USB cable or a regulated 5V supply.
+
+On boot, the ESP32 starts in Wi-Fi Access Point (AP) mode.
+
+2. Connect to the ESP32
+
+Open Wi-Fi settings on your phone or laptop.
+
+Connect to the Wi-Fi network created by the ESP32 (example: ESP_BELL).
+
+No internet is required.
+
+3. Open the Control Panel
+
+Open any web browser (Chrome, Safari, etc.).
+
+Go to the following address:
+
+http://192.168.4.1
+
+
+This opens the Smart Bell Control Panel.
+
+4. Create & Manage Bell Presets
+
+On the homepage, you can:
+
+Add new bell presets (e.g., Regular Day, Exam Day).
+
+Open a preset to configure bell timings.
+
+Inside a preset:
+
+Add bells sequentially (1st Bell, 2nd Bell, etc.).
+
+Set each bell time using a 24-hour clock.
+
+Save the preset.
+
+5. Real-Time Operation
+
+The current time is shown live on:
+
+The web interface
+
+The OLED display connected to the ESP32
+
+When the RTC time matches a configured bell time:
+
+The ESP32 triggers the relay
+
+The school bell rings automatically
+
+6. Power Failure Safety
+
+Timekeeping is maintained by the DS3231 RTC (battery-backed).
+
+Bell schedules are stored in non-volatile memory.
+
+After power restoration, the system resumes automatically without reconfiguration.
+
+Hardware Overview
+
+ESP32 – Main controller with Wi-Fi
+
+DS3231 RTC – Accurate real-time clock
+
+OLED Display – Live time and system status
+
+Relay Module – Safely switches the high-voltage school bell
+
+Notes
+
+The relay provides electrical isolation between low-voltage control electronics and the high-voltage bell line.
+
+The system can be extended to support:
+
+Cloud sync
+
+Multiple buildings
+
+Mobile app control
